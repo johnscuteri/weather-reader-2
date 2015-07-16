@@ -34,14 +34,14 @@
     [self.view addSubview:_imageBanner];
     //END Image*/
 
-    /*iAD
+    //*iAD
     _iAdBannerViewProperty = [[ADBannerView alloc] initWithFrame:adRect];
     [self.view addSubview:_iAdBannerViewProperty];
     _iAdBannerViewProperty.delegate = self;
     _iAdBannerViewProperty.hidden = YES;
     //END iAD*/
     
-    //AdMob
+    /*/AdMob
     //Get Key - This file is not under version control for a reason
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"apistuff" ofType:@"plist"];
     NSDictionary *plistData = [NSDictionary dictionaryWithContentsOfFile:filePath];
@@ -88,10 +88,10 @@
     _iAdBannerViewProperty.hidden = TRUE;
     NSLog(@"hidden");
     
-    //Set up up admob
+    /*Set up up admob
     [self.view addSubview:_adMobBannerViewProperty];
     [_adMobBannerViewProperty loadRequest:[self createAdMobRequest]];
-
+    /*/
 }
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
 {

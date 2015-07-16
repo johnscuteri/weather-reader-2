@@ -36,7 +36,6 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"apistuff" ofType:@"plist"];
     NSDictionary *plistData = [NSDictionary dictionaryWithContentsOfFile:filePath];
     
-    
     double lat = 40.73, lon = -73.44;
     NSString *urlString = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&APPID=%@",lat, lon, [plistData objectForKey:@"weather"]];
     NSURL *url = [[NSURL alloc] initWithString:urlString];

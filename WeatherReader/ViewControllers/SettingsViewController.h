@@ -16,4 +16,11 @@
 
 - (IBAction)buttonNoAds:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *gpsControl;
+
+@property (weak, nonatomic) IBOutlet UITextField *postalCodeField;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *units;
+
+
 @end

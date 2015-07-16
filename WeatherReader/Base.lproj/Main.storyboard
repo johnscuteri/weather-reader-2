@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dpl-U0-Pba">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dpl-U0-Pba">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -342,12 +342,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQo-gi-k5F">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Page 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqg-qA-RRd">
-                                        <rect key="frame" x="8" y="8" width="54" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVL-2W-K0s">
                                         <rect key="frame" x="8" y="481" width="102" height="30"/>
                                         <color key="backgroundColor" red="0.86009680710000003" green="0.5878630784354496" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -358,6 +352,25 @@
                                             <action selector="buttonNoAds:" destination="c6u-hw-lpJ" eventType="touchUpInside" id="cOK-dd-psw"/>
                                         </connections>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cVD-mV-jLy">
+                                        <rect key="frame" x="72" y="37" width="177" height="29"/>
+                                        <segments>
+                                            <segment title="GPS"/>
+                                            <segment title="Postal Code"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Postal Code" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JoF-ZO-rw9">
+                                        <rect key="frame" x="110" y="73" width="101" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="feU-E4-S0h">
+                                        <rect key="frame" x="77" y="111" width="167" height="29"/>
+                                        <segments>
+                                            <segment title="°Fahrenheit"/>
+                                            <segment title="°Celcius"/>
+                                        </segments>
+                                    </segmentedControl>
                                 </subviews>
                                 <connections>
                                     <outlet property="delegate" destination="c6u-hw-lpJ" id="6CF-IQ-rVf"/>
@@ -378,7 +391,10 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="gpsControl" destination="cVD-mV-jLy" id="fN0-Le-o8o"/>
+                        <outlet property="postalCodeField" destination="JoF-ZO-rw9" id="J5K-zZ-Fx5"/>
                         <outlet property="scrollView" destination="SQo-gi-k5F" id="A5i-df-d7r"/>
+                        <outlet property="units" destination="feU-E4-S0h" id="t6X-26-guo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0T-D1-oYc" userLabel="First Responder" sceneMemberID="firstResponder"/>

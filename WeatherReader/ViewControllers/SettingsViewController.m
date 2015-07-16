@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "CurrentWeatherViewController.h"
 
 @interface SettingsViewController ()
 
@@ -34,10 +35,18 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id) sender {
+    if([segue.identifier isEqualToString:@"showDetailSegue"]){
+        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        CurrentWeatherViewController *currentWeatherViewController = (CurrentWeatherViewController *)navController.topViewController;
+        [currentWeatherViewController.latitudeText setText: @"segue thing worked"];
+    }
+}
+
 
 - (IBAction)buttonNoAds:(id)sender {
-    
+    NSLog(@"NoAds");
 }
 
 @end
