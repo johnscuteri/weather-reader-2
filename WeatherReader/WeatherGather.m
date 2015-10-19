@@ -7,11 +7,13 @@
 //
 
 #import "WeatherGather.h"
+#import "AFHTTPRequestOperationManager.h"
 #import "AFHTTPRequestOperation.h"
 #import <CoreData/CoreData.h>
 
 @implementation WeatherGather
 {
+    
 }
 
 - (id) init {
@@ -38,11 +40,15 @@
     
     double lat = 40.73, lon = -73.44;
     NSString *urlString = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&APPID=%@",lat, lon, [plistData objectForKey:@"weather"]];
-    NSURL *url = [[NSURL alloc] initWithString:urlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    //NSURL *url = [[NSURL alloc] initWithString:urlString];
+    //NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    //AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    //operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    //operation.securityPolicy.allowInvalidCertificates = YES;
+    //[operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
         Weather *weather = [NSEntityDescription
                               insertNewObjectForEntityForName:@"Weather"
                               inManagedObjectContext:_managedObjectContext];
@@ -71,7 +77,7 @@
         Weather *weather;
         completionHandler(weather);
     }];
-    [operation start];
+    //[operation start];
 }
 
 @end

@@ -31,7 +31,6 @@
 		5277A0C51AA2D3C300313D8B /* SavedWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5277A0C41AA2D3C300313D8B /* SavedWeatherCell.m */; };
 		52B0651F19FDF8DC00F7F34C /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B0651E19FDF8DC00F7F34C /* iAd.framework */; };
 		52E4B10B1A984C2C000A0FBC /* WeatherGather.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E4B10A1A984C2C000A0FBC /* WeatherGather.m */; };
-		52E4B10D1A9A3899000A0FBC /* libPods-AFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E4B10C1A9A3899000A0FBC /* libPods-AFNetworking.a */; };
 		7B8C9B03A2AEBA41177DDC27 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 516C1914929BC15BEE3DC4E4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -108,7 +107,6 @@
 				52B0651F19FDF8DC00F7F34C /* iAd.framework in Frameworks */,
 				5262F2EB1A1C54060049FFB5 /* StoreKit.framework in Frameworks */,
 				5228E4F91A08FA0500D761E6 /* libGoogleAdMobAds.a in Frameworks */,
-				52E4B10D1A9A3899000A0FBC /* libPods-AFNetworking.a in Frameworks */,
 				7B8C9B03A2AEBA41177DDC27 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +288,7 @@
 		524634B719E7702D003B532C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "John Scuteri";
 				TargetAttributes = {
 					524634BE19E7702D003B532C = {
@@ -457,6 +455,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -528,6 +527,7 @@
 					"$(PROJECT_DIR)/Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-6.12.0",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.scuteri.iOS.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1d7189a6-3f4b-4b5b-b8d7-900a5c40c4fa";
 			};
@@ -546,6 +546,7 @@
 					"$(PROJECT_DIR)/Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-6.12.0",
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "net.scuteri.iOS.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1d7189a6-3f4b-4b5b-b8d7-900a5c40c4fa";
 			};
@@ -565,6 +566,7 @@
 				);
 				INFOPLIST_FILE = WeatherReaderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scuteri.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weather Reader.app/Weather Reader";
 			};
@@ -580,6 +582,7 @@
 				);
 				INFOPLIST_FILE = WeatherReaderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scuteri.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weather Reader.app/Weather Reader";
 			};
